@@ -25,22 +25,23 @@ if(isNaN(degreCelcius)){
 //Partie 1
 
 //Récupère le bouton
-let btCalculer = document.querySelector('button.temperature');
+let btCalculer = document.querySelector('button.calculer');
+let txtResultat = document.querySelector('p.resultat');
 
 //Ajoute un évenement au bouton
 btCalculer.addEventListener('click',()=> {
 
     //Récupère la valeur inscrit dans le champs de saisie
-    let degreCelcius = parseInt(document.querySelector('#temperature'));
+    let degrCelcius = parseFloat(document.querySelector('#temperature').value);
 
     //test si la veleur est un nombre
-    if (isNaN(degreCelcius)) {
+    if (isNaN(degrCelcius)) {
         //Si non affiche un message d'erreur
         alert('Veuillez entrer un nombre !');
     } else {
         //si oui affiche le résultat
-        let degreFarenheit = degreCelcius * 9 / 5 + 32;
-        prompt(`${degreCelcius}°C = ${degreFarenheit}°F`);
+        let degrFarenheit = degrCelcius * 9 / 5 + 32;
+        prompt(`${degrCelcius}°C = ${degrFarenheit}°F`);
     }
 });
 
