@@ -6,6 +6,8 @@
  */
 'use strict'; // Demande un interprétation stricte du code
 
+
+//EXERCICE 1
 //Demande à l'utilisateur d'entrer un nombre
 let degreCelcius = parseInt(prompt('Température en °C :'));
 
@@ -18,6 +20,36 @@ if(isNaN(degreCelcius)){
     let degreFarenheit = degreCelcius * 9 / 5 + 32;
     prompt(`${degreCelcius}°C = ${degreFarenheit}°F`);
 }
+
+//EXERCICE 2
+//Partie 1
+
+//Récupère le bouton
+let btCalculer = document.querySelector('button.temperature');
+
+//Ajoute un évenement au bouton
+btCalculer.addEventListener('click',()=> {
+
+    //Récupère la valeur inscrit dans le champs de saisie
+    let degreCelcius = parseInt(document.querySelector('#temperature'));
+
+    //test si la veleur est un nombre
+    if (isNaN(degreCelcius)) {
+        //Si non affiche un message d'erreur
+        alert('Veuillez entrer un nombre !');
+    } else {
+        //si oui affiche le résultat
+        let degreFarenheit = degreCelcius * 9 / 5 + 32;
+        prompt(`${degreCelcius}°C = ${degreFarenheit}°F`);
+    }
+});
+
+
+//Affiche la valeur du champs de saisie dans la console
+//ulArticles.innerHTML += "<li>" + txtArticle.value + "</li>";
+//Vide la console
+//txtArticle.value = "";
+
 
 //Formule
 //[°F] = [°C] x 9 / 5 + 32
